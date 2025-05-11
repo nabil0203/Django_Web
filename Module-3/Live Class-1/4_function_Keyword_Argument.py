@@ -1,4 +1,4 @@
-# # 1:10
+# 1:10
 # keyword argument
 # Doesn't need to maintain the serial while passing argument
 # how to write----> parameter = argument
