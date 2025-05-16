@@ -1,0 +1,7 @@
+# 1:41:35
+
+
+For a Successful File Openning & Closing:
+    1. Open file with appropiate Mode
+    2. Perform Operation
+    3. Close the file

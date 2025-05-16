@@ -1,0 +1,43 @@
+# 23:00
+
+
+1. Built-in
+
+    i. Syntax error (code not written correcty)
+            if 10 > 20 print("YESS")
+
+    ii. Name error (Variable doesn't exit)
+            a = 10
+            print(b)
+
+    iii. Type error (Wrong type with an Operation)
+            a = "Nabil"
+            b = 20
+            print(a + b)
+
+    iv. Value error (type is okay but value is wrong)
+            a = "Nabil"
+            b = "20"
+            print(int(a) + int(b))
+
+    v. Index error (index does not exist)
+            a = [5, 7]
+            print(a[6])
+
+    vi. Key error (key does not exist)
+            a = {
+                "name" : "Nabil Ahmed"
+            }
+
+            print(a["age"])
+
+    vi. Zero Division error (any number can not be divided by 0)
+            print(69 / 0) 
+
+
+-----------------------------------------------------------------------
+
+
+
+2. Custom
+

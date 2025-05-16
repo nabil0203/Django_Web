@@ -1,0 +1,11 @@
+# 54:00
+
+
+try :
+    # code that can produce Exception
+
+except :
+    # code that will execute if Exception occurs
+
+finally :
+    # code that will execute no matter what
