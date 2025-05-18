@@ -10,7 +10,7 @@ sc1 = School("Nabil")
 sc2 = School("Kola")
 
 
-School.school_name = "Savar Cantonment"                # Class variable changed for each objects
+School.school_name = "Savar Cantonment"                # Class variable changed for each objects (called by class-->School)
 
 
 
