@@ -12,11 +12,11 @@ class Car:
 
 
 
-car1 = Car("Honda", "Civic")                            # Object created and Valur passed
+car1 = Car("Honda", "Civic")                            # Object created and Value passed
 print(car1.brand, car1.model)
 
 
 
-car2 = Car("Toyota", "Corolla")                         # Object created and Valur passed
+car2 = Car("Toyota", "Corolla")                         # Object created and Value passed
 print(car2.brand, car2.model)
 

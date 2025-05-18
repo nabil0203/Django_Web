@@ -3,8 +3,6 @@
 
 
 
-
-
 class Car:
 
 
@@ -14,11 +12,11 @@ class Car:
 
 
 
+
 car1 = Car()                                             # Object created but value already declared
 print(car1.brand, car1.model)
 
 
 
-car2 = Car("Toyota", "Corolla")                         # Object created and Value passed
+car2 = Car("Toyota", "Corolla")                           # Object created and Value passed
 print(car2.brand, car2.model)
-
