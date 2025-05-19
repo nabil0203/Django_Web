@@ -11,7 +11,7 @@ class Employee:
         print("Salary:", self.salary)
 
      
-    @classmethod                                              # Class Method
+    @classmethod                                                 # Class Method
     def change_company_name(cls, name):                                # 'cls' used inside parameter
         cls.company_name = name                                        # '@classmethod' decorator--> it's declares that it's a class method
 
@@ -25,11 +25,12 @@ obj2.display_info()
 
 
 
-print(obj1.company_name)                                    # Ostad Platform
+print(obj1.company_name)                                        # Ostad Platform
 
-obj2.change_company_name("Amar baper company")                  # company only changed for 'obj2'
+obj2.change_company_name("Amar baper company")                  # even though only obj2 is called, the 'company_name' is a class variable, it will change for the each object
 
-print(obj2.company_name)                                    # Amar baper company
+print(obj1.company_name)                                        # Amar baper company
+print(obj2.company_name)                                        # Amar baper company
 
 
 

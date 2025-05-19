@@ -25,9 +25,9 @@ obj2.display_info()
 
 
 
+print(obj1.company_name)                                            # Ostad Platform
 
-print(obj1.company_name)
+Employee.change_company_name("Amar baper company")                  # From Here, company changed for whole class
 
-Employee.change_company_name("Amar baper company")                 # company only whole class
-print(obj1.company_name)
-print(obj2.company_name)
+print(obj1.company_name)                                            # Amar baper company
+print(obj2.company_name)                                            # Amar baper company

@@ -6,7 +6,9 @@ class Employee:
 
     def __init__(self, name, salary):
         self.name = name                            # Anyone Can access
-        self._salary = salary                       # '._variableName'---> this makes the varibale partially private; if I don't want everyone to access Salary;
+        self._salary = salary                       # '._variableName'---> this makes the varibale partially private(protected)
+                                                    #  So none can access Salary directly
+                                                    #  to access it-------> getter and setter needed
 
 
 obj1 = Employee("Rahim", 33000)

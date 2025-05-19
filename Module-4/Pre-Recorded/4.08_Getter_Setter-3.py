@@ -30,6 +30,6 @@ obj1 = Employee("Rahim", 33000)
 obj2 = Employee("Karim", 98800)
 
 
-obj1.get_Salary("admin")                          # salary will be shown of obj1
-obj1.set_Salary("admin", 22000)                   # updating the salary of obj1
-obj1.get_Salary("admin")                          # new salary will be shown of obj1
+obj1.get_Salary("admin")                          # password correct----->salary will be shown of obj1
+obj1.set_Salary("admin", 22000)                   # password correct----->updating the salary of obj1
+obj1.get_Salary("admin")                          # password correct----->new salary will be shown of obj1
