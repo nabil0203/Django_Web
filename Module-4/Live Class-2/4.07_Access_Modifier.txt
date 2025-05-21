@@ -1,0 +1,7 @@
+# 1:25:00
+
+# Hint of Who can access what
+
+# Public----------> Accessible from anywhere
+# Private---------> Accessible only for me
+# Protected-------> Like Realatives (not everyone, but only relatives)
