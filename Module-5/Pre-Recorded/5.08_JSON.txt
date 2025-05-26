@@ -1,0 +1,19 @@
+----------------------------------------
+-JSON:
+--> Javascript Object Notation
+--> A file format
+-- A respone comes against a Request
+-- This is done by JSON
+----------------------------------------
+
+
+-Deserialization:
+--> The process of converting JSON into Python object
+-Serialization:
+--> The process of converting Python object into JSON
+
+----------------------------------------
+
+
+json.load()----> read a json
+

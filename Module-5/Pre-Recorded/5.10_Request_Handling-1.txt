@@ -1,0 +1,6 @@
+
+Request --> (API) --> Response Cycle:-
+  i. Account create in a website -------- POST
+ ii. Request to see the course details -- GET
+iii. Update own profile ----------------- PUT/PATCH/UPDATE
+ vi. Delete a course -------------------- DELETE
