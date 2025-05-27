@@ -1,8 +1,8 @@
-# here we are calling the package '05_package'
-# this 05.1 file is created to show how to import a package into a file
-# '05_package' - folder is imported here as a Package
+# here we are importing the package '5.05_package'
+# this 5.05.1 file is created to show how to import a package into a file
+# '5.05_package' - folder is imported here as a Package
 
-# rename--> '05_package' folder into 'package'
+# rename--> '5.05_package' folder into 'package'
 
 
 
