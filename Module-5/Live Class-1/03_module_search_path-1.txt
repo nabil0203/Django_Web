@@ -1,0 +1,9 @@
+# 51:00
+
+
+Module Search Path
+
+When you import a module, Python searches for it in:
+    1. The current directory
+    2. Directories listed in PYTHONPATH
+    3. Installation-dependent default path (like site-packages)

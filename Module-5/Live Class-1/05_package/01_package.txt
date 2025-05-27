@@ -1,0 +1,6 @@
+# 59:00
+
+
+- When a folder has a python file, then that folder is called a Package of Python
+
+- package is used when working with different database/code
