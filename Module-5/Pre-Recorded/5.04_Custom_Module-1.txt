@@ -3,7 +3,7 @@
 Steps:
     i. make a file that consists of some method
             example: 5.04_Custom_Module-2.py
-                    --->rename this file as 'CustomModule' before running
+                    --->rename this file as 'CustomModule.py' before running
 
     ii. import the file into another file and only pass the value
             example: 5.04_Custom_Module-3.py

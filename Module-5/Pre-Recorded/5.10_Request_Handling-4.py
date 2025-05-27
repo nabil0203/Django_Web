@@ -1,4 +1,5 @@
 # https://jsonplaceholder.typicode.com/
+# https://www.geeksforgeeks.org/python-requests-tutorial/
 
 
 

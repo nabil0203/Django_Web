@@ -1,5 +1,5 @@
 # error shows bcz of the file name
-# please rename this file as 'CustomModule'
+# please rename this file as 'CustomModule.py'
 
 
 def add(a, b):

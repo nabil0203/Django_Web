@@ -1,10 +1,13 @@
+# 'strftime' - used
+# https://www.geeksforgeeks.org/python-strftime-function/
+
+
 import datetime
 
 
-now = datetime.datetime.now()           # took variable to use it below
+now = datetime.datetime.now()                # took variable to use it below
 
 
-# 'strftime' - used
 # formatting date time by my own format
 
 format_date_1 = now.strftime("%d~%m~%y")                         # %y--->shows year 2 digits 
@@ -39,3 +42,4 @@ format_time_3 = now.strftime("%I~%M~%S-%p")                      # %p--->shows a
 print("Custom time format-1:", format_time_1)
 print("Custom time format-2:", format_time_2)
 print("Custom time format-3:", format_time_3)
+
