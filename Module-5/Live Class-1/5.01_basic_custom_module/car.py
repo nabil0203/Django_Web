@@ -1,6 +1,3 @@
-# 02_car.py
-# Rename this this as--> car.py
-
 
 
 def start():
