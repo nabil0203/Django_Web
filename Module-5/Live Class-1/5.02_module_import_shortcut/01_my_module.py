@@ -4,7 +4,6 @@
 # import greet                                  # not importing the whole module
 
 
-
 from greet import greetings                     # just importing a specific method of the module
 # greet.greetings("Nabillllll")                 # no need to write the module name
 greetings("Nabillllll")
