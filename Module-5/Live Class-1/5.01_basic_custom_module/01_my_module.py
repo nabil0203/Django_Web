@@ -1,14 +1,7 @@
 # 19:00
 
 
-
-# before running this file
-# rename--> 01_greet.py --> greet.py
-# rename--> 02_car.py --> car.py
-
-
-
-# module is basically different different Python File
+# module is basically a different Python File
 # adding '.py' makes a file a module
 
 
