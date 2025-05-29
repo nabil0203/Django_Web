@@ -5,8 +5,8 @@
 ----------------------------------------
 -JSON:
 --> JavaScript Object Notation
---> A file//text format
--- A respone comes against a Request
+--> Simplified + Text formatted Dictionary
+-- A response comes against a Request
 -- This is done by JSON
 -- Very neat and organized way to store and exchange information, especially between computers
 -- We need JSON primarily because it acts as a universal, lightweight, and human-readable format for data interchange between different systems
