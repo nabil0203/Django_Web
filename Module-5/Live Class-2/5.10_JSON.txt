@@ -1,0 +1,8 @@
+# 1:4:30
+
+
+JSON
+- JavaScript Object Notation
+- Simplified + Text formatted Dictionary
+- 
+

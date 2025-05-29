@@ -1,0 +1,21 @@
+# 24:00
+
+
+
+Some common Class of Datetime Module:-
+╔══════════╦═══════════╗
+║          ║  datetime ║
+║          ╠═══════════╣
+║ Datetime ║    date   ║
+║  Module  ╠═══════════╣
+║          ║    time   ║
+║          ╠═══════════╣
+║          ║ timedelta ║
+╚══════════╩═══════════╝
+
+
+
+- date + time -----> datetime
+- date-------------> date
+- time-------------> time
+- timedelta--------> difference between two time/days
