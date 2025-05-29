@@ -1,7 +1,6 @@
 # https://www.geeksforgeeks.org/python-json/
 
 # Convert Dictionary to JSON
-
 # Serialization: Python --> JSON
 # dumps() - method used
 
@@ -17,6 +16,5 @@ data = {
     "test" : None                       # output--> null
 } 
 
-json_string = json.dumps(data, indent = 4)                          # json.dumps() -->converts python into JSON
-print(json_string)                                                  # indent used to show output organizedly
-
+json_string = json.dumps(data)                          # json.dumps() -->converts python into JSON
+print(json_string)
