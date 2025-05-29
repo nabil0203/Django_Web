@@ -2,11 +2,12 @@
 
 # Convert Dictionary to JSON
 
+# Serialization: Python --> JSON
+# dumps() - method used
 
 
 import json
 
-# Serialization: Python --> JSON
 
 data = {
     "Name" : "Nabil",
