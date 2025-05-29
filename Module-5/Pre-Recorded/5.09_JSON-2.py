@@ -2,11 +2,12 @@
 
 # Convert JSON to Dictionary
 
+# Deserialization: JSON --> Python
+# loads() - method used
 
 
 import json
 
-# Deserialization: JSON --> Python
 
 data = '{ "Name" : "Nabil", "age" : 30, "city" : "dhaka", "is_logged_in" : true}'
 
