@@ -4,3 +4,7 @@
 
 API
 - Interface to Communicate with
+- Attached with the system
+
+- We don't order the food directly to the Kitchen
+    We make order to Waiter, then waiter takes food from the kitchen

@@ -1,0 +1,16 @@
+# 1:36:10
+
+
+REST API
+- A specific format of API
+
+
+
+
+
+
+Common HTTP Methods REST API follows:
+- GET --------> to get anything
+- POST -------> create new data
+- PUT --------> update existing data
+- DELETE -----> remove data

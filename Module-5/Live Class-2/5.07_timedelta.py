@@ -12,4 +12,4 @@ date2 = datetime(2025, 5, 2)
 
 print(date2 - date1)
 
-print(type(date2 - date1))              # time differnce is time delta
+print(type(date2 - date1))              # time difference is timedelta
