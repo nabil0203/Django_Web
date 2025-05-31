@@ -6,6 +6,8 @@
 API
 - Interface to Communicate with
 - Attached with the system
+- An API is a set of rules that allow different software applications to communicate with each other
+
 
 - We don't order the food directly to the Kitchen
     We make orders with the Waiter, then the waiter takes the food from the kitchen
