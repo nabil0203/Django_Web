@@ -1,0 +1,5 @@
+
+Database:
+- Organized collection of Information
+- MySQL, MongoDB
+

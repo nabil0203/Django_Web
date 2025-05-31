@@ -1,0 +1,7 @@
+
+Data:
+- Collection of facts, numbers, words
+- NOT Organized
+
+Information:
+- Processed & Meaningful Data
