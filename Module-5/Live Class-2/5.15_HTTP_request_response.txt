@@ -1,10 +1,12 @@
 # 1:30:40
 
 
-HTTP (Request-Response)
-- Request----> requesting something from the server
-- Response---> what the client got against the request
-- this cycle is called HTTP
+HTTP (Request-Response):
+-- Request----> requesting something from the server
+-- Response---> what the client got against the request
+-- this cycle is called HTTP
+
+
 
 
 Diagram:
@@ -25,10 +27,11 @@ Diagram:
 |                                  |                      |                         |
 |                                  |                      |                         |
 | {                                |                      | <!DOCTYPE html>         |
-|   "data":                        | <--- Body ------->   | <html lang="en">        |
+|   "data":                        | <----- Body ------>  | <html lang="en">        |
 |   "ABC123"                       |                      | (more data...)          |
 | }                                |                      |                         |
 +----------------------------------+                      +-------------------------+
+
 
 
 
@@ -36,3 +39,5 @@ Main Information of the Diagram:
 - Header---> extra Information
 - Body-----> Main Information
 
+
+-
