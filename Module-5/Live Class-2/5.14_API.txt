@@ -7,4 +7,7 @@ API
 - Attached with the system
 
 - We don't order the food directly to the Kitchen
-    We make order to Waiter, then waiter takes food from the kitchen
+    We make orders with the Waiter, then the waiter takes the food from the kitchen
+- The waiter is the API
+
+
