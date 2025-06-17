@@ -1,4 +1,3 @@
--- Active: 1749205642186@@127.0.0.1@5432@student_management@public
 -- 1:38:30
 
 
