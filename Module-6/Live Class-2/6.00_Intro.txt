@@ -1,0 +1,6 @@
+Topics:
+    Data types
+    Sorting
+    LIKE
+    Aggregating
+    JOIN

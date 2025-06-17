@@ -1,0 +1,12 @@
+# 23:20
+
+
+Database:
+    - Structured collection of Data.
+
+
+
+DBMS
+    - System that is used to manage Database
+
+
