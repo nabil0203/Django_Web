@@ -1,0 +1,18 @@
+.single{
+    color: red;
+    width: 100px;
+    height: 100px;
+    background-color: purple;
+
+
+    /* position: static; */
+    /* position: relative;              related to items original position */
+    /* position: fixed;                 display er jekono jaygay ee thakbe, onno content scroll korleo kisu hobe na  */
+    /* position: sticky;                depends on Parent div if top:20px; then 20px scroll korar por fixed mto kaj korbe */
+
+
+    /* top: 20px;
+    left: 50px; */
+
+
+}
