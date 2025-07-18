@@ -1,0 +1,38 @@
+.container {
+    width: 80%;
+    height: 700px;
+    margin: 0 auto;
+    border: 10px solid black;
+    display: flex;
+}
+
+.item {
+    width: 150px;
+    height: 150px;
+    background-color: lightcoral;
+    padding: 1em;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+    border: 10px solid blue;
+    border-radius: 10px;
+    
+
+    /* transition-duration: 500ms;
+    transition-timing-function: linear; */              /*item er vitore dile, hover in + hover out duita tei transition hobe*/
+}
+
+
+
+/*----------------------
+Transition + Transform
+----------------------*/
+.item:hover{
+    background-color: red;
+    transition-duration: 500ms;
+    transition-timing-function: linear;
+    transform: rotate(45deg);
+    
+}
+
+

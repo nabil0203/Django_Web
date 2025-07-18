@@ -1,0 +1,35 @@
+.container {
+    width: 80%;
+    /* height: 600px; */
+    margin: 0 auto;
+    border: 10px solid black;
+}
+
+.item {
+    background-color: whitesmoke;
+    padding: 1em;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+    border: 10px solid blue;
+    border-radius: 10px;
+}
+
+
+
+/*----------------
+Grid code
+------------------*/
+.container {
+    display: grid;
+    grid-template-rows: 100px 100px 100px 100px 100px;
+    grid-template-columns: 100px 100px 100px 100px 100px;
+
+}
+
+.item-3 {
+    /* grid-row: 2/4;
+    grid-column: 1/5; */
+    grid-area: 2/1/4/5;                      /* 2 lines together*/
+    
+}

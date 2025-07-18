@@ -1,0 +1,37 @@
+.container {
+    width: 80%;
+    height: 450px;
+    margin: 0 auto;
+    border: 10px solid black;
+}
+
+.item {
+    width: 100px;
+    height: 150px;
+    background-color: whitesmoke;
+    padding: 1em;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+    border: 10px solid blue;
+    border-radius: 10px;
+}
+
+
+
+/*----------------------
+Flex box code
+-----------------------*/
+.container{
+    display: flex;
+    /* justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; */
+}
+
+.item-3{
+    /* flex-grow: 1; */
+    /* flex-shrink: 4; */
+    flex: 1 4;
+}
+
