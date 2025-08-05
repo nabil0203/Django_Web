@@ -15,7 +15,7 @@ console.log(x);
 
 
 // Arrow function
-// it's (Function+Variable)
+// it's both (Function+Variable)
 
 const add = (a, b) => {
     console.log("This is Arrow");
