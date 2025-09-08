@@ -1,0 +1,62 @@
+<!-- 32:20 -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple TODO App</title>
+    <link rel="stylesheet" href="15.06_style.css">
+</head>
+
+<body>
+    <main class="container">
+        <header class="app-header">
+            <h1>My Tasks</h1>
+            <p class="subtitle">
+                Keep track of what needs to be done
+            </p>
+        </header>
+
+        <section class="todo-input-section">
+            <form class="todo-form" id="todoForm">
+                <div class="input-container">
+                    <input type="text" id="todoInput" placeholder="What needs to be done?" required>
+                    <button type="submit" class="add-btn">
+                        <span class="plus-icon">+</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="todo-list-section">
+            <div class="list-header">
+                <h2 class="section-title">Tasks</h2>
+                <span class="task-count" id="taskCount">
+                    0 tasks
+                </span>
+            </div>
+
+            <ul class="todo-list" id="todoList" role="list">
+                <li class="todo-item">
+                    <div class="todo-checkbox"></div>
+                    <span class="todo-text">Learn JavaScript fundamentals</span>
+                    <button class="delete-btn">x</button>
+                </li>
+
+                <li class="todo-item completed">
+                    <div class="todo-checkbox checked"></div>
+                    <span class="todo-text">Build a project</span>
+                    <button class="delete-btn">x</button>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="15.05_script.js"></script>
+</body>
+
+</html>
+

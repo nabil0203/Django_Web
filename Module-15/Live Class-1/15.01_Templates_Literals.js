@@ -1,7 +1,7 @@
 // 16:55
 
 
-// Templates Literals in JS = ft string in Python
+// Templates Literals in JS = f string in Python
 
 
 
