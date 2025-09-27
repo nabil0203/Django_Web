@@ -71,16 +71,17 @@
 
         {% for student_app in students %}
             <div class="card m-2" style="width: 18rem;">
+                
                 <!-- <img src="..." class="card-img-top" alt="..."> -->
+                
                 <div class="card-body">
-
-                    <h5 class="card-title">{{student_app.name}}</h5>
+                    <h3 class="card-title">{{student_app.name}}</h3>
                     <p class="card-text">Email: {{student_app.email}}</p>
                     <p class="card-text">Age: {{student_app.age}}</p>
-                    <a href="#" class="btn btn-warning">Edit</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
-
+                    <a href="{% url 'update_students' id=student_app.id %}" class="btn btn-warning">Edit</a>
+                    <a href="{% url 'delete_students' id=student_app.id %}" class="btn btn-danger">Delete</a>
                 </div>
+
             </div>
 
         {% endfor %}
