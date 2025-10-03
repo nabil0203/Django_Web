@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 from . import models, forms
 
+from django.contrib import messages
+
 
 
 # Create your views here.
@@ -39,6 +41,7 @@ def create_students(request):
 
         if form.is_valid():
             form.save()
+            messages.success(request, "New Student Created Successfully")
             return redirect(list_students)
 
     form = forms.StudentForm()
@@ -59,6 +62,7 @@ def update_students(request, id):
 
         if form.is_valid():
             form.save()
+            messages.success(request, "Student's Information updated Successfully")
             return redirect(list_students)
 
     
@@ -75,5 +79,6 @@ def delete_students(request, id):
     student_app = get_object_or_404(models.Student, id=id)
     
     student_app.delete()
+    messages.success(request, "Student Deleted Successfully")
     return redirect('list_students')
     
