@@ -67,7 +67,7 @@ def update_students(request, id):
 
     
     form = forms.StudentForm(request.POST or None, instance=student_app)
-    return render(request, 'student_create.html', {'form' : form})
+    return render(request, 'student_create.html', {'form' : form, 'isUpdated' : True})
     
 
 

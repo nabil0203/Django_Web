@@ -50,7 +50,7 @@
         
         {% csrf_token %}
         
-        <h1>Student Create:</h1>
+        <h1>Student {% if isUpdated %} Update {% else %} Create {% endif %}:</h1>
         
         {{form}}
 
