@@ -4,14 +4,28 @@ from . import models, forms
 
 from django.contrib import messages
 
+from django.views.generic import ListView
+
+
 
 
 # Create your views here.
 
 
+
+# -----------------Function based view--------------
 def list_students(request):
     student_app = models.Student.objects.all()
     return render(request, "student_list.html", {"students": student_app})
+
+
+
+# --------------------Class based view-------------
+# class StudentViewList(ListView):
+#     template_name = 'student_list.html'
+#     model = models.Student
+#     context_object_name = 'students'
+
 
 
 # --------------------------------------------------------------------------------------------------
