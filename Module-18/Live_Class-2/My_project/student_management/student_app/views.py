@@ -122,6 +122,7 @@ class StudentUpdateView(UpdateView):
     form_class = forms.StudentForm
     template_name = 'student_create.html'
     success_url = reverse_lazy('list_students')
+    pk_url_kwarg = 'id'
     
     def form_valid(self, form):
         """If the form is valid, save the associated model."""
