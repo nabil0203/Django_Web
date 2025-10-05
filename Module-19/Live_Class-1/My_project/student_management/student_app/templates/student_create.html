@@ -14,7 +14,7 @@
 {% block content %}
 
 
-<!-- Create student form -->
+<!--------------------------------------- Create student form ---------------------------------->
 
     
     <!--------------- HTML FORM ---------------------->
@@ -50,7 +50,7 @@
         
         {% csrf_token %}
         
-        <h1>Student {% if isUpdated %} Update {% else %} Create {% endif %}:</h1>
+        <h1>Student {% if isUpdated %} Update {% else %} Create {% endif %}:</h1>               <!-- template reusable variable with if else -->          
         
         {{form}}
 
