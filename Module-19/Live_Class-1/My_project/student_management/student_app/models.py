@@ -3,12 +3,41 @@ from django.db import models
 
 # Create your models here.
 
+
+# ---------------mod-19 || live-1-----------------
+# 40:00
+
+
+class Department(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
+class Course(models.Model):
+    name = models.CharField(max_length=100)
+    department = models.ForeignKey(Department, on_delete=models.CASCADE)                     # one to many relationship [1 Department can has multiple course]
+
+    def __str__(self):
+        return self.name
+
+
+
+# ---------------mod-19 || live-1-----------------
+
+
+
+
 class Student(models.Model):
     name = models.CharField(max_length=150)
     email = models.EmailField()
     age = models.IntegerField()
 
+    course = models.ManyToManyField(Course, null=True, blank=True)                              # many to many relationship [many students can have the same course also same students can take multiple course]
+
+    photo = models.ImageField(upload_to='media/', null=True)
 
 
-    def __str__(self):                              # this shows the actual Student object name that we have created --> Turzo, Sakin
-        return self.name  
+    def __str__(self):
+        return self.name
