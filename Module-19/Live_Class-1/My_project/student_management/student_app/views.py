@@ -24,7 +24,6 @@ def list_students(request):
 # -----------------Function based view-------------------
 
 
-
 # --------------Model Form--------------
 def create_students(request):
     if request.method == "POST":
