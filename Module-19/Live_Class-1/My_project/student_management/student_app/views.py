@@ -4,6 +4,10 @@ from . import models, forms
 
 from django.contrib import messages
 
+from django.db import connection
+
+from django.db.models import Count,Avg,Max,Min,Sum
+
 
 
 
@@ -11,9 +15,54 @@ from django.contrib import messages
 
 
 
-# -----------------Function based view--------------
+
 def list_students(request):
     student_app = models.Student.objects.all()
+
+# O(n+1) query problem solution:
+    student_app_optimized = models.Student.objects.select_related('department').all()           # O(1)
+
+#optimization
+    # one_to_many_opt = models.Student.objects.select_related('department').all()
+    # many_to_many_opt = models.Student.objects.prefetch_related('course').all()
+
+
+
+#order by
+    # course = models.Course.objects.order_by('id').all()
+    # for i in course:
+    #     print(i.id,i.title)
+
+
+# raw sql
+    # students = models.Student.objects.raw("""SELECT * FROM student_student""")
+    # this is so complex and we normally don't use it
+
+
+    
+# connection related sql
+    # cursor = connection.cursor()
+    # cursor.execute("""SELECT * FROM student_student""")
+    # rows = cursor.fetchall()
+    # print(rows)
+
+
+# Aggregation
+    total_student = models.Student.objects.aggregate(total = Count('id'))
+    print(total_student)
+
+
+# Annotation:
+
+    student_annotate = models.Student.objects.annotate(student_count = Count('id'))
+
+    for i in student_annotate:
+        print(i.name,i.department,i.student_count)
+
+    print(student_annotate)
+
+
+
     return render(request, "student_list.html", {"students": student_app})
 
 
@@ -21,7 +70,7 @@ def list_students(request):
 
 
 
-# -----------------Function based view-------------------
+
 
 
 # --------------Model Form--------------
@@ -41,7 +90,6 @@ def create_students(request):
 
 
 
-# -----------------Function based view-------------------
 
 def update_students(request, id):
 
@@ -63,7 +111,6 @@ def update_students(request, id):
 
 
 
-# -----------------Function based view-------------------
 
 def delete_students(request, id):
     student_app = get_object_or_404(models.Student, id=id)

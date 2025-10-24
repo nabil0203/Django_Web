@@ -38,6 +38,8 @@ class Student(models.Model):
 
     photo = models.ImageField(upload_to='media/', null=True, blank=True, default=None)                                # after uploading an image it will be uploaded nad saved into "media" folder
 
+    department = models.ForeignKey(Department, on_delete=models.CASCADE, null=True, blank=True, default=None)
+
 
     def __str__(self):
         return self.name
