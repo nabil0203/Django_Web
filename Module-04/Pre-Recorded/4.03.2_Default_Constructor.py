@@ -4,13 +4,10 @@
 
 
 class Car:
-
-
     def __init__(self):             # Constructor
         self.brand = ""
         self.model = ""
         
-    
 
 
 car1 = Car()                 # object created
@@ -25,7 +22,7 @@ print(car1.brand, car1.model)
 
 
 """
------Eqvalant Code in JAVA------
+-----------Eqvalant Code in JAVA------------
 
 
 
