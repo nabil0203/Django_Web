@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+
+    Create Form
+
+{% endblock %}
+
+
+
+
+
+{% block content %}
+
+
+<!--------------------------------------- Create student form ---------------------------------->
+
+    
+    <!--------------- HTML FORM ---------------------->
+
+    <!-- <form method="post" class="container w-50 mt-5 p-4 border rounded shadow" >
+
+        {% csrf_token %}
+        
+        <h1>Student Create:</h1>
+
+        <div class="mb-3">
+            <label for="nameInput" class="form-label">Full Name:</label>
+            <input type="text" class="form-control" id="nameInput" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="emailInput" class="form-label">Email address:</label>
+            <input type="email" class="form-control" id="emailInput" name="email">
+        </div>
+        <div class="mb-3">
+            <label for="ageInput" class="form-label">Age:</label>
+            <input type="number" class="form-control" id="ageInput" name="age">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form> -->
+    
+
+    
+    
+    <!-------------------- Model FORM ----------------------->
+    
+    <form method="post" class="container w-50 mt-5 p-4 border rounded shadow" >
+        
+        {% csrf_token %}
+        
+        <h1>Student {% if isUpdated %} Update {% else %} Create {% endif %}:</h1>               <!-- template reusable variable with if else -->          
+        
+        {{form}}
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+
+
+{% endblock %}

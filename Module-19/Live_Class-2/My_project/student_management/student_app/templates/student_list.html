@@ -1,0 +1,47 @@
+
+{% extends 'base.html' %}
+
+
+
+{% block title %}
+
+    Student List
+
+{% endblock %}
+
+
+
+
+
+{% block content %}
+
+    <!-- List -->
+
+    <h1>List of Students</h1>
+
+    <a href="{% url 'create_students' %}" class="btn btn-primary">Create New Student</a>
+
+    <div class="d-flex flex-wrap justify-content-center">
+
+        {% for student_app in students %}
+            <div class="card m-2" style="width: 18rem;">
+                
+                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                
+                <div class="card-body">
+                    <h3 class="card-title">{{student_app.name}}</h3>
+                    <p class="card-text">Email: {{student_app.email}}</p>
+                    <p class="card-text">Age: {{student_app.age}}</p>
+                    <a href="{% url 'update_students' id=student_app.id %}" class="btn btn-warning">Edit</a>
+                    <a href="{% url 'delete_students' id=student_app.id %}" class="btn btn-danger">Delete</a>
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+
+    </div>
+
+    
+{% endblock %}
