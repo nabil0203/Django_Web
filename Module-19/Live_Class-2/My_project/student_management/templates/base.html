@@ -1,5 +1,8 @@
 {% load static %}
 
+<!-- {%load crispy_forms_tags %}                         -----mod-19 || live-2----- -->
+
+
 
 <!doctype html>
 <html lang="en">
@@ -11,7 +14,7 @@
 
     <title>                                                                 
         
-        {% block title %}                                   <!------------------ Title change --------------->
+        {% block title %}
         {% endblock %}
     
     </title>
@@ -76,7 +79,7 @@
 
 
 
-    <div>                                                <!------------------ Message Framework --------------->
+    <div>
 
         {% if messages %}
 
@@ -95,7 +98,7 @@
 
 
     <div>
-        <img src="{% static 'images/image.jpg' %}" alt="horse">
+        <img src="{% static 'images/image.png' %}" alt="horse">
     </div>
 
 
@@ -103,7 +106,7 @@
 
 
 
-    {% block content %}                               <!------------------ Content change --------------->
+    {% block content %}
 
     {% endblock %}
 

@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{%load crispy_forms_tags %}                         <!------mod-19 || live-2------>
+
 
 {% block title %}
 
@@ -50,9 +52,9 @@
         
         {% csrf_token %}
         
-        <h1>Student {% if isUpdated %} Update {% else %} Create {% endif %}:</h1>               <!-- template reusable variable with if else -->          
+        <h1>Student {% if isUpdated %} Update {% else %} Create {% endif %}:</h1>
         
-        {{form}}
+        {{ form|crispy }}                                                                <!--  -----mod-19 || live-2----->
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

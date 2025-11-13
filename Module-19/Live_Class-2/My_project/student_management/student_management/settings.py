@@ -40,13 +40,19 @@ INSTALLED_APPS = [
     
     'student_app',
 
-    'crispy_forms',                                 # ---mod-19 || live-2--
+    'crispy_forms',                                   # ---mod-19 || live-2--
 
-    'crispy_bootstrap4',
+    'crispy_bootstrap4',                              # ---mod-19 || live-2--
+
+    'users_app',                                      # ---mod-19 || live-2--
 
 ]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACK = "bootstrap4"                     # ---mod-19 || live-2--
+CRISPY_TEMPLATE_PACK = "bootstrap4"                             # ---mod-19 || live-2--
+
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
