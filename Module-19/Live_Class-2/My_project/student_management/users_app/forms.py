@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import User
 
 
-class UserRegisterFrom(UserCreationForm):
+class UserRegisterForm(UserCreationForm):
 
     class Meta:
         model = User

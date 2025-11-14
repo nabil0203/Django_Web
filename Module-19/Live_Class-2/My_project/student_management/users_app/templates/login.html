@@ -5,7 +5,7 @@
 
 {% block title %}
 
-    Register Page
+    Login Page
 
 {% endblock %}
 
@@ -16,7 +16,7 @@
 {% block content %}
 
 
-<!--------------------------------------- Create Register form ---------------------------------->
+<!--------------------------------------- user Login form ---------------------------------->
 
     
     <!-------------------- Model FORM ----------------------->
@@ -25,7 +25,7 @@
         
         {% csrf_token %}
         
-        <h1>Register Form</h1>
+        <h1>Login Form</h1>
         
         {{ form|crispy }}                                                                <!-- -----mod-19 || live-2--->
 

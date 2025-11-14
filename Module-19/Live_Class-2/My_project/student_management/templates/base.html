@@ -65,7 +65,11 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                        {% if user.is_authenticated %}
+                            Welcome, {{ user.username }}!
+                        {% else %}
+                            Please log in.
+                        {% endif %} 
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
