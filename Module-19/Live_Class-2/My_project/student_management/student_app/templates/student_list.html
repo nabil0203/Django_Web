@@ -32,8 +32,25 @@
                     <h3 class="card-title">{{student_app.name}}</h3>
                     <p class="card-text">Email: {{student_app.email}}</p>
                     <p class="card-text">Age: {{student_app.age}}</p>
-                    <a href="{% url 'update_students' id=student_app.id %}" class="btn btn-warning">Edit</a>
-                    <a href="{% url 'delete_students' id=student_app.id %}" class="btn btn-danger">Delete</a>
+
+
+<!-- --------------------------------------mod-19 || live-2---------------------------------------- -->
+
+<!-- if logged in or authenticated only then the user can EDIT/DELETE -->
+<!-- if not logged then the following message will be shown --> 
+
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'update_students' id=student_app.id %}" class="btn btn-warning">Edit</a>
+                        <a href="{% url 'delete_students' id=student_app.id %}" class="btn btn-danger">Delete</a>
+
+
+                    {% else %}
+                    <div class="container" style="background-color: cornflowerblue;">
+                        <h5> Login/Register to Edit & Delete </h5>
+                    </div>
+                    
+                    {% endif %}
+
                 </div>
 
             </div>
@@ -41,7 +58,24 @@
         {% endfor %}
 
 
-    </div>
+<!-- --------------------------------------mod-19 || live-2---------------------------------------- -->
 
-    
+    <!--------------- this part can be added here or in the base.html --------------->
+    <!--------------- for now it is added in base.html --------------->
+ 
+    <!--<div class="container my-2">
+            {% if user.is_authenticated%}
+                <h2>Welcome {{user.username}}!</h2>
+                <a class="btn btn-danger" href="{% url 'logout'%}">Logout</a>
+
+            {% else %}
+                <a class="btn btn-primary" href="{% url 'register'%}">Register</a>
+                <a class="btn btn-primary" href="{% url 'login'%}">Login</a>
+            
+            {% endif %}
+        </div>
+
+
+    </div> -->
+
 {% endblock %}

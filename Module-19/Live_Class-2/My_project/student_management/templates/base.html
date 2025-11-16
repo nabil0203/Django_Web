@@ -1,6 +1,5 @@
 {% load static %}
 
-<!-- {%load crispy_forms_tags %}                         -----mod-19 || live-2----- -->
 
 
 
@@ -65,13 +64,7 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item">
-                        {% if user.is_authenticated %}                                              <!-------mod-19 || live-2------>
-                            Welcome, {{ user.username }}!                                           <!---when User logs in---->
-                        {% else %}
-                            Please log in.
-                        {% endif %} 
-                    </li>
+                    
 
                 </ul>
                 <form class="d-flex" role="search">
@@ -99,6 +92,25 @@
     </div>
 
 
+<!-----------------------------------mod-19 || live-2---------------------------------->
+
+
+    <!---User login---->
+
+    <!-------------------- this part can be added here or in the student_list.html -------------------->
+    <!-------------------- for now it is added here -------------------->
+
+    <li class="nav-item">
+        {% if user.is_authenticated%}
+            <h2>Welcome {{user.username}}!</h2>
+            <a class="btn btn-danger" href="{% url 'logout'%}">Logout</a>
+
+        {% else %}
+            <a class="btn btn-primary" href="{% url 'register'%}">Register</a>
+            <a class="btn btn-primary" href="{% url 'login'%}">Login</a>
+            
+        {% endif %}
+    </li>
 
 
 

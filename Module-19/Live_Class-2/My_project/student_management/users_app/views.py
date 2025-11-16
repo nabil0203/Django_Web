@@ -75,5 +75,5 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    messages.success(request, 'Logged in Successfully')
-    return redirect('login.html')
+    messages.success(request, 'Logged Out Successfully')
+    return redirect('list_students')
