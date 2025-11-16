@@ -12,5 +12,7 @@ urlpatterns = [
 
     path('logout/', views.logout_view, name='logout'),                           # for logout
 
+    path('pass_change/', views.pass_change, name='pass_change'),                           # for logout
+
 ]
 

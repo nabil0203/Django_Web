@@ -63,9 +63,6 @@
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
-
-                    
-
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
@@ -92,6 +89,7 @@
     </div>
 
 
+
 <!-----------------------------------mod-19 || live-2---------------------------------->
 
 
@@ -101,11 +99,11 @@
     <!-------------------- for now it is added here -------------------->
 
     <li class="nav-item">
-        {% if user.is_authenticated%}
+        {% if user.is_authenticated%}                                                                               <!--if authenticated/logged in then show Name and Logout button-->
             <h2>Welcome {{user.username}}!</h2>
             <a class="btn btn-danger" href="{% url 'logout'%}">Logout</a>
 
-        {% else %}
+        {% else %}                                                                                                  <!--if not logged in then show Register and Login button-->
             <a class="btn btn-primary" href="{% url 'register'%}">Register</a>
             <a class="btn btn-primary" href="{% url 'login'%}">Login</a>
             

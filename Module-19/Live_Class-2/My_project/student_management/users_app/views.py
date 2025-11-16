@@ -6,6 +6,11 @@ from django.contrib import messages                                             
 
 from django.contrib.auth.forms import AuthenticationForm                        # for the login_view
 
+from django.contrib.auth.forms import PasswordChangeForm                        # for the pass_change
+
+from django.contrib.auth import update_session_auth_hash                        # for the pass_change, 
+from django.contrib.auth.decorators import login_required                       # for the pass_change
+
 
 
 # Create your views here.
@@ -77,3 +82,39 @@ def logout_view(request):
     logout(request)
     messages.success(request, 'Logged Out Successfully')
     return redirect('list_students')
+
+
+
+
+
+
+
+# -------------------Password Change-------------------
+
+
+# Method-1 : Need old password
+# check settings.py
+
+@login_required                                                 # decorator imported
+def pass_change(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(user=request.user, data = request.POST)    
+
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)                    # keep the user logged in after changing the password
+            return redirect('list_students')
+
+
+    else:
+        form = PasswordChangeForm(user = request.user)
+
+    return render(request, 'pass_change.html', {'form' : form}) 
+
+
+
+
+
+# Method-2 : Old password not needed
+
+# def pass_change(request):
