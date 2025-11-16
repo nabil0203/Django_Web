@@ -1,14 +1,17 @@
 
 from django.shortcuts import render, redirect
-from . import forms
-from django.contrib.auth import authenticate, login
-from django.contrib import messages
+from . import forms                                                             # for all the forms
+from django.contrib.auth import authenticate, login, logout                     # for authenticate login and logout
+from django.contrib import messages                                             # for the messages
 
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm                        # for the login_view
 
 
 
 # Create your views here.
+
+
+
 
 
 # -------------------Register new user-------------------
@@ -35,6 +38,8 @@ def register_view(request):
 
 
 
+
+
 # -------------------Login new user-------------------
 
 def login_view(request):
@@ -42,10 +47,11 @@ def login_view(request):
         form = AuthenticationForm(request, data = request.POST)    
 
         if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username = username, password = password)
-            if user is not None:
+            username = form.cleaned_data.get('username')                                    # cleaned_data = errorless data
+            password = form.cleaned_data.get('password')                                    # cleaned_data = errorless data
+            user = authenticate(username = username, password = password)                           # checks if the user is valid
+
+            if user is not None:                                                          # asholei kono user ke paici kina, paile login+success message
                 login(request, user)
                 messages.success(request, 'Logged in Successfully')
                 return redirect('list_students')
@@ -58,3 +64,16 @@ def login_view(request):
         form = AuthenticationForm()
 
     return render(request, 'login.html', {'form' : form})
+
+
+
+
+
+
+
+# -------------------Logout user-------------------
+
+def logout_view(request):
+    logout(request)
+    messages.success(request, 'Logged in Successfully')
+    return redirect('login.html')
