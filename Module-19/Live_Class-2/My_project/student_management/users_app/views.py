@@ -8,8 +8,10 @@ from django.contrib.auth.forms import AuthenticationForm                        
 
 from django.contrib.auth.forms import PasswordChangeForm                        # for the pass_change
 
-from django.contrib.auth import update_session_auth_hash                        # for the pass_change, 
-from django.contrib.auth.decorators import login_required                       # for the pass_change
+from django.contrib.auth import update_session_auth_hash                        # for the pass_change method 1,2
+from django.contrib.auth.decorators import login_required                       # for the pass_change method 1,2
+
+from django.contrib.auth.forms import SetPasswordForm                              # for the pass_change method 2
 
 
 
@@ -93,16 +95,19 @@ def logout_view(request):
 
 
 # Method-1 : Need old password
+# import required
 # check settings.py
 
-@login_required                                                 # decorator imported
+@login_required                                                     # decorator imported; login required so that none can change the password without logging in
 def pass_change(request):
     if request.method == 'POST':
-        form = PasswordChangeForm(user=request.user, data = request.POST)    
+        form = PasswordChangeForm(user=request.user, data = request.POST)                   # user = user who already has an account;     data = who is requesting data
 
         if form.is_valid():
             form.save()
-            update_session_auth_hash(request, form.user)                    # keep the user logged in after changing the password
+            update_session_auth_hash(request, form.user)                          # 'hash' keeps the user logged in after changing the password
+            messages.success(request, 'Password Changed Successfully!!!')
+
             return redirect('list_students')
 
 
@@ -115,6 +120,27 @@ def pass_change(request):
 
 
 
-# Method-2 : Old password not needed
 
-# def pass_change(request):
+# Method-2 : No Old password needed
+# same to same as the method-1
+# just imported 'SetPasswordForm'
+# changed 'PasswordChangeForm' into 'SetPasswordForm'
+
+
+@login_required
+def pass_change2(request):
+    if request.method == 'POST':
+        form = SetPasswordForm(user=request.user, data = request.POST)
+
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)
+            messages.success(request, 'Password Changed Successfully!!!')
+
+            return redirect('list_students')
+
+
+    else:
+        form = SetPasswordForm(user = request.user)
+
+    return render(request, 'pass_change.html', {'form' : form}) 

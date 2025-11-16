@@ -12,7 +12,9 @@ urlpatterns = [
 
     path('logout/', views.logout_view, name='logout'),                           # for logout
 
-    path('pass_change/', views.pass_change, name='pass_change'),                           # for logout
+    path('pass_change/', views.pass_change, name='pass_change'),                           # for password change [Old password required]
+
+    path('pass_change2/', views.pass_change2, name='pass_change2'),                           # for password change [Old password not required]
 
 ]
 
