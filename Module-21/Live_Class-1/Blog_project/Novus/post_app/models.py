@@ -9,7 +9,7 @@ from ckeditor.fields import RichTextField                   # Rich text field
 #Different Category
 class Category(models.Model):
 
-    name = models.TextField(max_length=255)
+    name = models.CharField(max_length=255)
 
 
     class Meta:
@@ -26,7 +26,7 @@ class Category(models.Model):
 #Different Tag
 class Tag(models.Model):
 
-    name = models.TextField(max_length=255)
+    name = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name
@@ -40,7 +40,7 @@ class Tag(models.Model):
 # Post
 class Post(models.Model):
 
-    title = models.TextField(max_length=255)
+    title = models.CharField(max_length=255)
     content = RichTextField()                                                             # Rich Text field
     author = models.ForeignKey(User, on_delete=models.CASCADE)                            # Author of the post [User & Post -> 1 to Many]
     category = models.ForeignKey(Category, on_delete=models.CASCADE)                      # Category of the post [Category & Post -> 1 to Many]
