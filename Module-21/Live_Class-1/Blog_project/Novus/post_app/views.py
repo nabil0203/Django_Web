@@ -51,8 +51,8 @@ def post_list(request):
 
                                                                         
 
-    paginator = Paginator(posts, 2)                                                             # 2 posts per page
-    page_number = request.GET.get('page')                                                       # 100 post = 50 page
+    paginator = Paginator(posts, 2)                                                             # 2 posts per page: 100 post = 50 page
+    page_number = request.GET.get('page')                                                       # '?page=8'
     page_obj = paginator.get_page(page_number)                                                  # if page exists, it will show the posts of that page
 
 
