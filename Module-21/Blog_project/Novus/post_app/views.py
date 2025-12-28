@@ -2,10 +2,11 @@ from django.shortcuts import render
 
 from .models import Category, Tag, Comment, Post
 
-from django.db.models import Q
+from django.db.models import Q                          # used in 'search'
 
 from django.core.paginator import Paginator
 
+from django.contrib.auth.models import User
 
 
 
@@ -43,16 +44,18 @@ def post_list(request):
     # we search depending on title OR category OR tag OR content
     if searchQ:
         posts = posts.filter(                                                           
-            Q(title__icontains = searchQ) |                                                     # icontains = converts all the searched text into case lower case [no sensitive]
+            Q(title__icontains = searchQ) |                                                     # icontains = converts all the searched text into lower case [no sensitive]
             Q(content__icontains = searchQ)   |
             Q(category__name__icontains = searchQ)  |
             Q(tag__name__icontains = searchQ)
-        ).distinct()                                                                            # 'distinct' used to show the search result once
+        ).distinct()                                                                            # if search = "Python"; then post will show once for title, once for content, once for tag
+                                                                                                # 'distinct' used to show the search result once
+                                                                                               
 
                                                                         
 
     paginator = Paginator(posts, 2)                                                             # 2 posts per page: 100 post = 50 page
-    page_number = request.GET.get('page')                                                       # '?page=8'
+    page_number = request.GET.get('page')                                                       # '?page=8' {user query}
     page_obj = paginator.get_page(page_number)                                                  # if page exists, it will show the posts of that page
 
 
@@ -69,6 +72,5 @@ def post_list(request):
 
 
     return render(request, '', context)
-
 
 
