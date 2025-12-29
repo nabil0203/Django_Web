@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 
 from .models import Category, Tag, Comment, Post
 
@@ -7,6 +7,13 @@ from django.db.models import Q                          # used in 'search'
 from django.core.paginator import Paginator
 
 from django.contrib.auth.models import User
+
+from . import forms                                                 # live-2
+
+from django.contrib.auth.forms import UserCreationForm                # live-2
+
+from django.contrib.auth import login                                 # live-2
+
 
 
 
@@ -71,6 +78,188 @@ def post_list(request):
 
 
 
-    return render(request, '', context)
+    return render(request, 'blog/post_list.html', context)
 
+
+
+
+
+
+# ------------------------ Live - 2 ---------------------------------------
+
+
+# create post
+# import the form
+def post_create(request):
+
+    if request.method == 'POST':
+        form = forms.PostForm(request.POST)                     # the data submitted by the user submitted in the form, we will get those data by the `post request`
+        if form.is_valid():
+            form = form.save(commit=False)                     # commit=false bcz we have some fields of Post Model remaining
+            form.author = request.user
+            form.save()
+
+            return redirect('post_list')
+        
+
+    else:                                                # else means GET request
+        form = forms.PostForm()
+
+    return render(request, 'blog/post_create.html   ',{'form' : form})
+
+
+
+
+
+
+# update post
+# import get_object_or_404
+def post_update(request, id):                                               # 'id' needed bcz just 1 specific id update at a time
+
+    post = get_object_or_404(Post, id=id)                                   # matching the 'id' of the post, with the 'id' I want to edit; if it's matched then stored in 'post'
+    if request.method == 'POST':
+        form = forms.PostForm(request.POST, instance=post)               # instance = post; if user goes for update menu but does't update/change anything and save it, then this handles it
+                                                                         # request.POST; if user goes for update menu and updates/changes anything
+        if form.is_valid():
+            form.save()
+            return redirect('post_list')
+        
+
+    else:                                                       # else means GET request
+        form = forms.PostForm(instance=post)                    # instance=post means user will see the object always filled up with the data
+
+    return render(request, 'blog/post_create.html',{'form' : form})
+
+
+
+
+
+
+
+
+# delete post
+def post_delete(request, id):                                    # 'id' needed bcz just 1 specific id delete at a time
+    
+    post = get_object_or_404(Post, id=id)
+    post.delete()
+
+    return redirect('post_list')
+
+
+
+
+
+
+
+# read post
+def post_details(request, id):
+
+    post = get_object_or_404(Post, id=id)
+
+    # comment form handle
+    # take comment in a form                                    [same as 'create post' form -->post_create]
+    if request.method == 'POST':
+        form = forms.CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.user = request.user
+            comment.post = post
+            comment.save()
+            return redirect('post_details', id=post.id)               # id=post.id means, it will show the same post that I am commenting on
+
+    else:
+        form = forms.CommentForm()
+
+
+
+
+    # show comments [for specific posts]
+    comments = post.comment_set.all()                                             # Comment and Post == 1 to Many; all comments of a post will be shown
+
+
+
+    # post is already Liked by the user or not
+    is_liked = post.liked_users.filter(id=request.user.id).exists()                         # filtering 'liked_user' of the model; "id = request.user.id" -> matching the 'liked_user' ID with the ID of the currently logged-in user.
+
+
+
+    # like count
+    like_count = post.liked_users.count()
+
+
+
+
+    context = {
+        'post' : post,
+        'categories' : Category.objects.all(),
+        'tag' : Tag.objects.all(),
+        'comments' : comments,
+        'is_liked' : is_liked,
+        'like_count' : like_count,
+        'comment_form' : forms.CommentForm
+    }
+
+
+
+    # post view count[impression]
+    post.views_count += 1                                                   # 'views_count' in DB; default = 0; increments every time the post is seen
+    post.save()
+
+
+
+    return render(request, 'blog/post_details.html', context)
+
+
+
+
+
+
+
+
+
+
+
+
+# Like post
+def like_post(request, id):
+
+    post = get_object_or_404(Post, id=id)                                       # like 1 specific post
+
+
+    if post.liked_users.filter(id = request.user.id):                                # user already liked the post
+        post.liked_users.remove(request.user)                                        # can't like again, like will be removed
+
+
+    else:                                                           #  user did not liked the post
+        post.liked_users.add(request.user)                           # therefore add the user into liked_user list
+
+
+    return redirect('post_details', id=post.id)                      # id=post.id means, it will show the same post that I am Liking
+
+
+
+
+
+
+
+
+
+# sign up user
+# same as 'post_create'
+# import 'UserCreationForm'
+def signup_view(request):
+    
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+
+            return redirect('post_list')
+        
+
+    else:                                                # else means GET request
+        form = UserCreationForm()
+
+
+    return render(request, 'user/signup.html', {'form' : form})
 

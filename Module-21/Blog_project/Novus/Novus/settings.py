@@ -41,7 +41,15 @@ INSTALLED_APPS = [
     'post_app',
 
     'ckeditor',
+
+    'crispy_forms',
+
+    'crispy_bootstrap5'
 ]
+
+# crispy setup
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_ALLOWED_TEMPLATE_PACK = 'bootstrap5'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -55,10 +63,17 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Novus.urls'
 
+# for user related task
+LOGIN_REDIRECT_URL='/'
+LOGOUT_REDIRECT_URL = "/"
+LOGIN_URL="/login/"
+
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

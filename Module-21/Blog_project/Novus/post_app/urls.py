@@ -1,0 +1,19 @@
+from django.urls import path
+from . import views
+
+from django.contrib.auth.views import LoginView, LogoutView
+
+urlpatterns = [
+
+    path('', views.post_list, name='post_list'),
+
+    path('post/create', views.post_create, name='post_create'),
+    path('post/update/<int:id>/', views.post_update, name='post_update'),
+    path('post/delete/<int:id>/', views.post_delete, name='post_delete'),
+    path('post/like/<int:id>/', views.like_post, name='like_post'),
+    path('post/details/<int:id>/', views.post_details, name='post_details'),
+
+    path('signup/', views.signup_view, name='signup_view'),
+     path('login/', LoginView.as_view(template_name = ''), name = 'login'),
+     path('logout/', LogoutView.as_view(), name = 'logout')
+]

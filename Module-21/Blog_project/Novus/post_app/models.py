@@ -6,15 +6,15 @@ from ckeditor.fields import RichTextField                   # Rich text field
 
 
 
+
+
 #Different Category
 class Category(models.Model):
 
     name = models.CharField(max_length=255)
 
-
     class Meta:
         verbose_name_plural = "Categories"
-
 
     def __str__(self):
         return self.name
@@ -35,8 +35,6 @@ class Tag(models.Model):
 
 
 
-
-
 # Post
 class Post(models.Model):
 
@@ -46,7 +44,7 @@ class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)                      # Category of the post [Category & Post -> 1 to Many]
     # comment = models.ForeignKey(Comment)                                                  # Comment of the post [Comment & Post -> 1 to Many]
     tag = models.ManyToManyField(Tag)                                                     # Tag of the post [Comment & Post -> Many to Many]
-    liked_user = models.ManyToManyField(User, related_name='liked_user')                  # who who liked in the post [ User & Like -> Many to Many]
+    liked_users = models.ManyToManyField(User, related_name='liked_posts', blank=True)                  # who who liked in the post [ User & Like -> Many to Many]
     views_count = models.BigIntegerField(default = 0)                                     # how many people have seen the post [count increment in each reload]
 
     created_at = models.DateTimeField(auto_now_add=True)                                    # The Creation time of an Object will be stored Automatically 
