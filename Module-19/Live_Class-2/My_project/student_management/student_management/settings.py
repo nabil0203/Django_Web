@@ -51,9 +51,9 @@ INSTALLED_APPS = [
 CRISPY_ALLOWED_TEMPLATE_PACK = "bootstrap4"                     # ---mod-19 || live-2--
 CRISPY_TEMPLATE_PACK = "bootstrap4"                             # ---mod-19 || live-2--
 
-LOGOUT_REDIRECT_URL = "/auth/login"                                 # password change
-LOGIN_URL="/auth/login"                                              # password change
-LOGIN_REDIRECT_URL=''                                               # password change
+LOGIN_REDIRECT_URL=''
+LOGOUT_REDIRECT_URL = "/auth/login"
+LOGIN_URL="/auth/login"
 
 
 MIDDLEWARE = [
