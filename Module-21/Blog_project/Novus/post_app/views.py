@@ -14,6 +14,8 @@ from django.contrib.auth.forms import UserCreationForm                # live-2
 
 from django.contrib.auth import login                                 # live-2
 
+from django.contrib.auth.decorators import login_required                # live-2
+
 
 
 
@@ -90,6 +92,7 @@ def post_list(request):
 
 # create post
 # import the form
+@login_required
 def post_create(request):
 
     if request.method == 'POST':
@@ -114,6 +117,7 @@ def post_create(request):
 
 # update post
 # import get_object_or_404
+@login_required
 def post_update(request, id):                                               # 'id' needed bcz just 1 specific id update at a time
 
     post = get_object_or_404(Post, id=id)                                   # matching the 'id' of the post, with the 'id' I want to edit; if it's matched then stored in 'post'
@@ -138,6 +142,7 @@ def post_update(request, id):                                               # 'i
 
 
 # delete post
+@login_required
 def post_delete(request, id):                                    # 'id' needed bcz just 1 specific id delete at a time
     
     post = get_object_or_404(Post, id=id)
@@ -152,6 +157,7 @@ def post_delete(request, id):                                    # 'id' needed b
 
 
 # read post
+@login_required
 def post_details(request, id):
 
     post = get_object_or_404(Post, id=id)
@@ -221,6 +227,7 @@ def post_details(request, id):
 
 
 # Like post
+@login_required
 def like_post(request, id):
 
     post = get_object_or_404(Post, id=id)                                       # like 1 specific post
@@ -263,3 +270,34 @@ def signup_view(request):
 
     return render(request, 'user/signup.html', {'form' : form})
 
+
+
+
+
+
+
+# user profile page
+# Profile page
+@login_required
+def profile_view(request):
+    section = request.GET.get('section', 'profile')
+    context = {'section' : section}
+    
+    if section == 'posts':
+        posts = Post.objects.filter(author = request.user)
+        context['posts'] = posts 
+    
+    elif section == 'update':
+        
+        if request.method == 'POST':
+            form = forms.UpdateProfileForm(request.POST, instance=request.user)                 # 'instance=request.user' = specific user's content will be shown to update
+            if form.is_valid():
+                form.save()
+                return redirect('/profile?section=update')
+                
+        else:
+            form = forms.UpdateProfileForm(instance=request.user)
+    
+        context['form'] = form
+    
+    return render(request, 'user/profile.html', context)

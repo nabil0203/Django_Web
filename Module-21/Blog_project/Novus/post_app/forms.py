@@ -4,6 +4,7 @@
 
 from django import forms
 from .models import Post, Comment
+from django.contrib.auth.models import User
 
 
 
@@ -24,3 +25,14 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ['content']                                                # only this 1 field needed
 
+
+
+
+
+
+# profile update
+class UpdateProfileForm(forms.ModelForm):
+    class Meta:
+        model = User 
+        fields = ['username', 'first_name', 'last_name', 'email'] 
+        

@@ -13,7 +13,8 @@ urlpatterns = [
     path('post/like/<int:id>/', views.like_post, name='like_post'),
     path('post/details/<int:id>/', views.post_details, name='post_details'),
 
-    path('signup/', views.signup_view, name='signup_view'),
-     path('login/', LoginView.as_view(template_name = ''), name = 'login'),
-     path('logout/', LogoutView.as_view(), name = 'logout')
+    path('signup/', views.signup_view, name='signup'),
+    path('login/', LoginView.as_view(template_name = 'user/login.html'), name = 'login'),
+    path('logout/', LogoutView.as_view(), name = 'logout'),
+    path('profile/', views.profile_view, name = 'profile')
 ]
