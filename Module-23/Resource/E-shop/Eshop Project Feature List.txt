@@ -1,0 +1,16 @@
++--------------------------------------------------------------+-----------+
+| Features                                                     | Status    |
++--------------------------------------------------------------+-----------+
+| Requirement Analysis                                         | Completed |
+| Model Design                                                 | Completed |
+| Built-in Authentication                                      | Completed |
+| Sign in with Google                                          | Completed |
+| Product List, Product Details, Related Products, Commenting  | Completed |
+| Searching and Filtering                                      | Completed |
+| Full Function Cart Features                                  | Completed |
+| SSLCOMMERZ Setup                                             | Completed |
+| Gmail Setup for Email Sending                                | Completed |
+| Full Function Payment Features                               | Completed |
+| URL Design                                                   | Completed |
+| Template Design                                              | Completed |
++--------------------------------------------------------------+-----------+
