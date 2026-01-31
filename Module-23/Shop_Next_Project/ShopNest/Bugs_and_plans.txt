@@ -1,0 +1,12 @@
+
+--------------------Bug------------
+payment redirect
+
+
+_______Task____________
+Change ui
+change email template
+Bug ---payment success
+admin panel customization
+R&D about Unique 2/3 features
+Address save as the 1st address
