@@ -9,6 +9,13 @@ from .models import Author, Book
 from .serializers import AuthorSerializer, BookSerializer
 
 
+# class based view
+from rest_framework import viewsets
+
+
+
+
+# -------------------- Function based View ----------------------------
 
 
 # Author create
@@ -20,7 +27,7 @@ def author_list_create(request):
     # get request
     if request.method == 'GET':
         authors = Author.objects.all()                                                      # this gives a query set --> List of Dictionary (Author list)
-        serializer = AuthorSerializer(authors, many = True)                                 # as GET request, we are fetching data from DB as query set
+        serializer = AuthorSerializer(authors, many = True)                                 # (same as forms) as GET request, we are fetching data from DB as query set
                                                                                             # then converting the query set into --> JSON ; here, using serializer instead of forms
 
         return Response(serializer.data, status=status.HTTP_200_OK)                         # we will get the data from DB and HTTP 200 response
@@ -40,7 +47,6 @@ def author_list_create(request):
 
 
 
-    
 
 
 
@@ -76,5 +82,28 @@ def book_list_create(request):
 
 
 
+
+
+
     
+
+
+# -------------------- Class based View ----------------------------
+
+# class handles 4 Request at a single time
+# get, post, put/patch, delete
+# check Live_class-2--->24.02
+
+
+
+
+
+class AuthorViewSet(viewsets.ModelViewSet):
+
+    queryset = Author.objects.all()
+    serializer_class = AuthorSerializer
+
+
+
+
 
