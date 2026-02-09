@@ -83,6 +83,49 @@ DATABASES = {
 }
 
 
+
+# DRF pagination 
+# DRF Throttling
+
+REST_FRAMEWORK = {
+
+
+    # This is PageNumberPagination
+    # 3 items per page
+    
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 3,
+
+
+
+
+    # Throttling
+
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.AnonRateThrottle',
+        'rest_framework.throttling.UserRateThrottle'
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '1000/day',                                         #👈anonymous user 100 per day
+        'user': '1000/day'                                          #👈Logged in user 1000 per day
+    },
+
+
+
+
+
+    # Filtering
+
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+
+
+}
+
+
+
+
+
+
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
 

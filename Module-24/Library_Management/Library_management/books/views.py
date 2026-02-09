@@ -10,7 +10,7 @@ from .serializers import AuthorSerializer, BookSerializer
 
 
 # class based view
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 
 
 
@@ -103,6 +103,24 @@ class AuthorViewSet(viewsets.ModelViewSet):
     queryset = Author.objects.all()
     serializer_class = AuthorSerializer
 
+
+
+    # DRF filtering
+
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter]            # ordering based on all the fields of object
+
+
+
+    # DRF ordering
+
+    ordering_fields = ['name']                                                  # ordering based on just name
+
+
+
+
+    # DRF Searching
+
+    search_fields = ['name', 'bio']                                             # searching based on bio name and bio
 
 
 
