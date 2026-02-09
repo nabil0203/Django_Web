@@ -13,6 +13,10 @@ from .serializers import AuthorSerializer, BookSerializer
 from rest_framework import viewsets, filters
 
 
+# JWT token authentication
+from rest_framework.permissions import IsAuthenticated
+
+
 
 
 # -------------------- Function based View ----------------------------
@@ -106,21 +110,20 @@ class AuthorViewSet(viewsets.ModelViewSet):
 
 
     # DRF filtering
-
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]            # ordering based on all the fields of object
 
 
-
     # DRF ordering
-
     ordering_fields = ['name']                                                  # ordering based on just name
 
 
-
-
     # DRF Searching
-
     search_fields = ['name', 'bio']                                             # searching based on bio name and bio
+
+
+
+    # token authentication
+    permission_classes = [IsAuthenticated]
 
 
 
