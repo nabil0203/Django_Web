@@ -6,7 +6,7 @@ function Map(){
 
         <div>
         {
-            my_projects.map((project, index) => {
+            my_projects.map((project, index) => {                // 👈map
                     return <div>{project}</div>
                 })
         }
