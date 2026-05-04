@@ -31,7 +31,7 @@ function Use_state_hook() {
 
 
     const [x, setX] = useState(0);                      // useState is a hook 
-                                                        //"x" is the variable and "setX" is the function to change the value of x; initial value of x    0; 
+                                                        //"x" is the variable and "setX" is the function to change the value of x; initial value of x is 0; 
 
     function increment() {                                 // function to increment the value of x by 1 each time
         setX(x + 1);
