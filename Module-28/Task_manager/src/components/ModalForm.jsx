@@ -11,7 +11,7 @@ function ModalForm({ closeModal, addTask }){
                 
                 <p className="font-bold text-2xl">Add New Task</p>
 
-                <form className="py-12 px-6" onSubmit={addTask}>                                                                                                            {/* arrow function not needed bcz no parameter is passing; this will work after clicking the button*/}
+                <form onSubmit={addTask} className="py-12 px-6">                                                                                                            {/* arrow function not needed bcz no parameter is passing; this will work after clicking the button*/}
 
                     <input type="text" name="taskTitle" placeholder="Task Title" className="w-full px-3 py-2 border rounded-xl"/>
                     <textarea name="taskDescription" placeholder="Task Description" className="w-full mt-3 px-3 py-2 border rounded-xl"></textarea>
