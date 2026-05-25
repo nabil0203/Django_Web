@@ -1,0 +1,23 @@
+
+
+
+<h2>Invoice #{{ invoice.invoice_number }}</h2>
+<p>Client: {{ invoice.client.name }}</p>
+
+<table>
+    <tr>
+        <th>Description</th><th>Qty</th><th>Price</th><th>Total</th>
+    </tr>
+    {% for item in invoice.items.all %}
+    <tr>
+        <td>{{ item.description }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.total_price }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<p><b>Total Amount:</b> {{ invoice.get_total }}</p>
+
+<a href="/{{ invoice.id }}/pdf/">Download PDF</a>
